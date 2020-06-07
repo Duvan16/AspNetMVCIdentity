@@ -49,6 +49,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -183,13 +185,28 @@
     <Compile Include="Migrations\202005290418050_Initial.Designer.cs">
       <DependentUpon>202005290418050_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006070446176_nuevaBBDD.cs" />
+    <Compile Include="Migrations\202006070446176_nuevaBBDD.Designer.cs">
+      <DependentUpon>202006070446176_nuevaBBDD.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminViewModel.cs" />
+    <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderItem.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Supplier.cs" />
+    <Compile Include="Models\TiendaContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="TiendaMigrations\202006070444497_Initial.cs" />
+    <Compile Include="TiendaMigrations\202006070444497_Initial.Designer.cs">
+      <DependentUpon>202006070444497_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TiendaMigrations\Configuration.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -283,6 +300,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005290418050_Initial.resx">
       <DependentUpon>202005290418050_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006070446176_nuevaBBDD.resx">
+      <DependentUpon>202006070446176_nuevaBBDD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TiendaMigrations\202006070444497_Initial.resx">
+      <DependentUpon>202006070444497_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

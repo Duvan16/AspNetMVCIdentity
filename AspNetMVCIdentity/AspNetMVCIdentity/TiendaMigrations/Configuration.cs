@@ -1,19 +1,19 @@
-namespace AspNetMVCIdentity.Migrations
+namespace AspNetMVCIdentity.TiendaMigrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<IdentitySample.Models.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<AspNetMVCIdentity.Models.TiendaContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            MigrationsDirectory = @"Migrations";
+            MigrationsDirectory = @"TiendaMigrations";
         }
 
-        protected override void Seed(IdentitySample.Models.ApplicationDbContext context)
+        protected override void Seed(AspNetMVCIdentity.Models.TiendaContext context)
         {
             //  This method will be called after migrating to the latest version.
 
