@@ -189,6 +189,10 @@
     <Compile Include="Migrations\202006070446176_nuevaBBDD.Designer.cs">
       <DependentUpon>202006070446176_nuevaBBDD.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006070504573_Fecha_Nullable.cs" />
+    <Compile Include="Migrations\202006070504573_Fecha_Nullable.Designer.cs">
+      <DependentUpon>202006070504573_Fecha_Nullable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminViewModel.cs" />
@@ -303,6 +307,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006070446176_nuevaBBDD.resx">
       <DependentUpon>202006070446176_nuevaBBDD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006070504573_Fecha_Nullable.resx">
+      <DependentUpon>202006070504573_Fecha_Nullable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TiendaMigrations\202006070444497_Initial.resx">
       <DependentUpon>202006070444497_Initial.cs</DependentUpon>

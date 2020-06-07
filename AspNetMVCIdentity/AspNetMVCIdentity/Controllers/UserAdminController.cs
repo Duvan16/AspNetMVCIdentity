@@ -144,7 +144,7 @@ namespace IdentitySample.Controllers
                 Nombre = user.Nombre,
                 Apellidos = user.Apellidos,
                 Ciudad = user.Ciudad,
-                FechaNacimiento = user.FechaNacimiento,
+                //FechaNacimiento = user.FechaNacimiento,
                 RolesList = RoleManager.Roles.ToList().Select(x => new SelectListItem()
                 {
                     Selected = userRoles.Contains(x.Name),
