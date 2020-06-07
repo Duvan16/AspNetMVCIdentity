@@ -23,7 +23,7 @@ namespace AspNetMVCIdentity.Models
             modelBuilder.Entity<Customer>()
                 .HasMany(e => e.Order)
                 .WithRequired(e => e.Customer)
-                .WillCascadeOnDelete(false);
+                .WillCascadeOnDelete(true);
 
             modelBuilder.Entity<Order>()
                 .Property(e => e.TotalAmount)
@@ -32,7 +32,7 @@ namespace AspNetMVCIdentity.Models
             modelBuilder.Entity<Order>()
                 .HasMany(e => e.OrderItem)
                 .WithRequired(e => e.Order)
-                .WillCascadeOnDelete(false);
+                .WillCascadeOnDelete(true);
 
             modelBuilder.Entity<OrderItem>()
                 .Property(e => e.UnitPrice)
@@ -45,12 +45,12 @@ namespace AspNetMVCIdentity.Models
             modelBuilder.Entity<Product>()
                 .HasMany(e => e.OrderItem)
                 .WithRequired(e => e.Product)
-                .WillCascadeOnDelete(false);
+                .WillCascadeOnDelete(true);
 
             modelBuilder.Entity<Supplier>()
                 .HasMany(e => e.Product)
                 .WithRequired(e => e.Supplier)
-                .WillCascadeOnDelete(false);
+                .WillCascadeOnDelete(true);
         }
     }
 }

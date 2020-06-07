@@ -170,6 +170,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RolesAdminController.cs" />
@@ -209,6 +210,10 @@
     <Compile Include="TiendaMigrations\202006070444497_Initial.cs" />
     <Compile Include="TiendaMigrations\202006070444497_Initial.Designer.cs">
       <DependentUpon>202006070444497_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TiendaMigrations\202006070550387_Eliminacion_Cascada.cs" />
+    <Compile Include="TiendaMigrations\202006070550387_Eliminacion_Cascada.Designer.cs">
+      <DependentUpon>202006070550387_Eliminacion_Cascada.cs</DependentUpon>
     </Compile>
     <Compile Include="TiendaMigrations\Configuration.cs" />
   </ItemGroup>
@@ -281,6 +286,11 @@
     <Content Include="Views\RolesAdmin\Delete.cshtml" />
     <Content Include="Views\RolesAdmin\Create.cshtml" />
     <Content Include="Views\Account\DisplayEmail.cshtml" />
+    <Content Include="Views\Customers\Create.cshtml" />
+    <Content Include="Views\Customers\Delete.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Customers\Edit.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -313,6 +323,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TiendaMigrations\202006070444497_Initial.resx">
       <DependentUpon>202006070444497_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TiendaMigrations\202006070550387_Eliminacion_Cascada.resx">
+      <DependentUpon>202006070550387_Eliminacion_Cascada.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
