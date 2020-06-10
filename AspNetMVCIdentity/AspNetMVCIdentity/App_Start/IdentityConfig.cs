@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Threading.Tasks;
 using System.Web;
+using System.Configuration;
 
 namespace IdentitySample.Models
 {
@@ -49,12 +50,12 @@ namespace IdentitySample.Models
             // You can write your own provider and plug in here.
             manager.RegisterTwoFactorProvider("PhoneCode", new PhoneNumberTokenProvider<ApplicationUser>
             {
-                MessageFormat = "Your security code is: {0}"
+                MessageFormat = "Tu Código de Seguridad es: {0}"
             });
             manager.RegisterTwoFactorProvider("EmailCode", new EmailTokenProvider<ApplicationUser>
             {
-                Subject = "SecurityCode",
-                BodyFormat = "Your security code is {0}"
+                Subject = "Código de Seguridad",
+                BodyFormat = "Tu Código de Seguridad es {0}"
             });
             manager.EmailService = new EmailService();
             manager.SmsService = new SmsService();
@@ -87,7 +88,32 @@ namespace IdentitySample.Models
         public Task SendAsync(IdentityMessage message)
         {
             // Plug in your email service here to send an email.
-            return Task.FromResult(0);
+
+            var sendGridUserName = ConfigurationManager.AppSettings["cuenta"]; ;
+            var sentFrom = ConfigurationManager.AppSettings["correo"];
+            var sendGridPassword = ConfigurationManager.AppSettings["password"];
+
+
+            // Configure the client:
+            var client =
+                new System.Net.Mail.SmtpClient("smtp.sendgrid.net", Convert.ToInt32(587));
+
+            client.Port = 587;
+            client.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
+            client.UseDefaultCredentials = false;
+
+            // Create the credentials:
+            System.Net.NetworkCredential credentials =
+                new System.Net.NetworkCredential(sendGridUserName, sendGridPassword);
+            client.EnableSsl = true; client.Credentials = credentials;
+
+            // Create the message: 
+            var mail = new System.Net.Mail.MailMessage(sentFrom, message.Destination);
+            mail.Subject = message.Subject;
+            mail.Body = message.Body;
+
+            // Send: 
+            return client.SendMailAsync(mail);
         }
     }
 
